@@ -21,6 +21,7 @@
       return {
         swiperOptions: {
           slidesPerView: 3,
+          spaceBetween: 30,
           pagination: {
             el: '.swiper-pagination'
           },
@@ -32,15 +33,11 @@
         return this.$refs.mySwiper.$swiper
       }
     },
-    mounted() {
-      console.log('Current Swiper instance object', this.swiper)
-      this.swiper.slideTo(1, 1000, false)
-    }
   }
 </script>
 
 <style scoped>
 .img-preview {
-  max-width: 95%;
+  max-width: 100%;
 }
 </style>

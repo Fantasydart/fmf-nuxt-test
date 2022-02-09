@@ -2,6 +2,7 @@
   <div class="wrapper">
     <Navigation />
     <Slider :slides="slides"/>
+    <SlideForm @addSlideToSlides="addSlideToSlides" />
   </div>
 </template>
 
@@ -15,10 +16,12 @@
     },
     created() {
       this.fetchSlides()
-      console.log(this.slides)
     },
     methods: {
-      ...mapActions(['fetchSlides']),
+      ...mapActions(['fetchSlides','addSlideAction']),
+      addSlideToSlides(slide){
+        this.addSlideAction(slide);
+      }
     }
   }
 </script>

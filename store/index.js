@@ -17,16 +17,20 @@ export const actions = {
    axios.get('https://jsonplaceholder.typicode.com/photos?_limit=3').then(response => {
      const slides = response.data
      commit('addSlides',  slides)
-     console.log(slides)
    })
+  },
+  addSlideAction({commit}, slide){
+    commit('addSlide',  slide)
   }
 }
 
 //mutations
 export const mutations = {
   addSlides(state, slides){
-    console.log(slides)
     state.slides.push(...slides)
+  },
+  addSlide(state, slide){
+    state.slides.push(slide)
   }
 }
 
